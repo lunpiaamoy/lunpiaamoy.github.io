@@ -120,35 +120,21 @@
     content: ""; position: absolute; left: 50%; top: -122px; width: 150px; height: 150px; transform: translateX(-50%);
     border-radius: 50%; border: 1px solid var(--gold-soft); box-shadow: 0 0 0 10px rgb(169 131 79 / .06);
   }
-  .story h2 { position: relative; font: 400 28px/1.1 "DM Serif Display", Georgia, serif; color: var(--amoy); margin: 0; }
-  .story .origin { margin: 6px 0 0; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
-  .rule { width: 56px; height: 2px; margin: 16px auto; border-radius: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-  .story p { margin: 0 0 12px; color: #4a3a3b; }
-  .more {
-    display: inline-block; margin-top: 6px; padding: 10px 20px; border-radius: 999px;
-    color: var(--amoy); font-weight: 700; text-decoration: none;
-    border: 1px solid var(--gold); background: var(--surface);
-    transition: background-color .15s, color .15s;
+  .story h2 {
+    position: relative; margin: 0; padding: .18em .2em .08em;
+    font: 400 60px/1 var(--script), "Snell Roundhand", "Apple Chancery", cursive; color: var(--amoy);
+    background: linear-gradient(180deg, #a3262d 20%, var(--amoy-deep) 80%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 3px 6px rgb(109 20 25 / .2));
   }
-  .more:hover { background: var(--amoy); color: #fff; border-color: var(--amoy); }
+  .story .year { margin: 10px 0 18px; }
+  .story .punch { margin-bottom: 0; color: var(--amoy); font-weight: 700; }
+  .story .origin { margin: 6px 0 0; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+  .story p { margin: 0 0 12px; color: #4a3a3b; }
 
   footer { position: relative; z-index: 1; padding: 20px 16px 36px; text-align: center; font-size: 13px; color: var(--muted); }
-  /* Tulisan latin penutup */
-  .signoff { margin: 0 0 22px; font-family: var(--script), "Snell Roundhand", "Apple Chancery", cursive; font-weight: 400; line-height: 1; }
-  .signoff span { display: block; }
-  .signoff .love {
-    font-size: 72px; padding: .2em .2em .1em; margin-top: -.2em; color: var(--amoy);
-    background: linear-gradient(180deg, #a3262d 20%, var(--amoy-deep) 80%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 3px 6px rgb(109 20 25 / .22));
-  }
-  .signoff .place, .signoff .since {
-    color: var(--gold); font-size: 40px; margin-top: 2px;
-    text-shadow: 0 1px 0 rgb(255 255 255 / .8), 0 2px 8px rgb(169 131 79 / .3);
-  }
-  .signoff .since { font-size: 34px; margin-top: 8px; }
 
   @media (prefers-reduced-motion: reduce) {
-    a.pill, a.link, .more { transition: none; }
+    a.pill, a.link { transition: none; }
     a.pill:hover, a.link:hover { transform: none; }
   }
 </style>
@@ -182,7 +168,7 @@
   <ul>
     <li class="wa" data-key="wa"><a class="pill">
         <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></span>
-        <span class="txt"><b>Order by Whatsapp</b><small>Lunpia Amoy Special</small><small class="price">Rp. 25.000</small></span>
+        <span class="txt"><b>Order</b><small>Lunpia Amoy Special</small><small class="price">Rp. 25.000</small></span>
         <span class="arrow" aria-hidden="true">›</span>
       </a></li>
     <li class="maps" data-key="maps"><a class="pill">
@@ -212,19 +198,16 @@
   </ul>
 
   <section class="story">
-    <h2>Cerita kami</h2>
+    <h2 lang="en">With Love</h2>
     <p class="origin">Desa Amoy · Xiamen · Fujian</p>
-    <div class="rule"></div>
-    <p>Berbekal sehelai baju, leluhur kami merantau dari Desa Amoy, China, ke Negeri Zamrud Khatulistiwa pada tahun 1900-an.
-    Di tempat asalnya, lunpia selalu hadir dalam festival musim semi. Di Indonesia, lunpia dikenal sebagai oleh-oleh khas Kota Semarang.</p>
-    <p>Kami percaya perpaduan resep leluhur dengan bahan terbaik memberi Anda cita rasa yang istimewa.</p>
-    <a class="more" href="https://lunpiaamoy.wordpress.com" target="_blank" rel="noopener">Kunjungi situs lengkap kami ›</a>
+    <p class="year">1900</p>
+    <p>Awal 1900-an, leluhur kami meninggalkan Desa Amoy hanya berbekal sehelai baju — dan resep lunpia keluarga.</p>
+    <p>Setiap kali rindu kampung halaman, lunpia itulah yang mereka buat.</p>
+    <p>Tahun 1930, resep itu bertemu rasa Semarang. Lahirlah Lunpia Amoy.</p>
+    <p class="punch">Hampir seabad kemudian, perjalanan itu masih ada di setiap gigitan.</p>
   </section>
 </main>
-<footer>
-  <p class="signoff" lang="en"><span class="love">With Love</span><span class="place">Amoy, Fujian</span><span class="since">1900</span></p>
-  © Lunpia Amoy
-</footer>
+<footer>© Lunpia Amoy</footer>
 
 <script>
   // ===== ISI LINK DI SINI =====
